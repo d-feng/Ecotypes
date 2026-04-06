@@ -1,0 +1,21 @@
+input:
+  expression_path: "data/tcga_luad_prepared/expression.tsv"
+  metadata_path: "data/tcga_luad_prepared/metadata.tsv"
+  cell_state_abundances_path: "data/tcga_luad_prepared/cell_state_abundances.tsv"
+  output_dir: "output_tcga_luad"
+
+preprocessing:
+  min_gene_mean: 2.0
+  min_samples_expressed: 20
+  log_transform: false
+  zscore_genes: true
+
+ecotypes:
+  k_min: 2
+  k_max: 5
+  jaccard_significance_alpha: 0.05
+  min_states_per_ecotype: 3
+
+reporting:
+  top_markers_per_ecotype: 20
+  metadata_plot_column: "Stage"

@@ -1,0 +1,21 @@
+input:
+  expression_path: "data/expression.tsv"
+  metadata_path: "data/metadata.tsv"
+  cell_state_abundances_path: "data/cell_state_abundances.tsv"
+  output_dir: "output"
+
+preprocessing:
+  min_gene_mean: 1.0
+  min_samples_expressed: 8
+  log_transform: true
+  zscore_genes: true
+
+ecotypes:
+  k_min: 2
+  k_max: 5
+  jaccard_significance_alpha: 0.05
+  min_states_per_ecotype: 3
+
+reporting:
+  top_markers_per_ecotype: 20
+  metadata_plot_column: "TumorType"

@@ -1,0 +1,21 @@
+input:
+  expression_path: "data/ecotyper_example_prepared/expression.tsv"
+  metadata_path: "data/ecotyper_example_prepared/metadata.tsv"
+  cell_state_abundances_path: "data/ecotyper_example_prepared/cell_state_abundances.tsv"
+  output_dir: "output_ecotyper_example_lung"
+
+preprocessing:
+  min_gene_mean: 0.01
+  min_samples_expressed: 10
+  log_transform: true
+  zscore_genes: true
+
+ecotypes:
+  k_min: 2
+  k_max: 6
+  jaccard_significance_alpha: 0.05
+  min_states_per_ecotype: 3
+
+reporting:
+  top_markers_per_ecotype: 20
+  metadata_plot_column: "Histology"
