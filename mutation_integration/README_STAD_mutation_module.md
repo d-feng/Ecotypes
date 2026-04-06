@@ -2,9 +2,11 @@
 
 This module adds mutation-aware analysis on top of the existing STAD EcoTyper recovery run in:
 
-- `C:/Users/difen/Rcode/ecotyper/RecoveryOutput_STAD/bulk_stad_data`
+- `RecoveryOutput_STAD/bulk_stad_data`
 
 The workflow keeps ecotypes fixed, then adds mutation-derived biomarkers and within-ecotype mutation clustering.
+
+Run all commands from the repository root.
 
 ## Scripts
 
@@ -34,22 +36,23 @@ The main external input is a TCGA-STAD MAF with at least:
 
 Default expected path:
 
-- `C:/Users/difen/Rcode/ecotyper/data/tcga_stad_raw/TCGA.STAD.mutect2_somatic.maf.gz`
+- `data/tcga_stad_raw/TCGA.STAD.open_masked_somatic.maf.tsv.gz`
 
 ## Example run order
 
 ```r
-Rscript mutation_integration/build_stad_mutation_features.R --maf_path C:/path/to/TCGA.STAD.maf.gz
+Rscript mutation_integration/build_stad_mutation_features.R --maf_path data/tcga_stad_raw/TCGA.STAD.open_masked_somatic.maf.tsv.gz
 Rscript mutation_integration/run_stad_ecotype_mutation_association.R
 Rscript mutation_integration/run_stad_within_ecotype_clustering.R
 Rscript mutation_integration/make_stad_mutation_figures.R
+Rscript mutation_integration/make_stad_gastric_manuscript_panels.R
 ```
 
 ## Outputs
 
 Written under:
 
-- `C:/Users/difen/Rcode/ecotyper/MutationIntegration_STAD`
+- `MutationIntegration_STAD`
 
 Key files:
 
@@ -77,3 +80,12 @@ Planned next:
 - MSI/HRD/aneuploidy integration
 - oncoprint generation
 - pathway- and paper-specific comparison panels
+
+## Upstream dependency
+
+This module assumes the STAD EcoTyper recovery has already been run and that these files exist:
+
+- `RecoveryOutput_STAD/bulk_stad_data/Ecotypes/ecotype_assignment.txt`
+- `RecoveryOutput_STAD/bulk_stad_data/Ecotypes/ecotype_abundance.txt`
+
+If they do not exist yet, start with the recovery step described in `README_COLLABORATOR_HANDOFF.md`.

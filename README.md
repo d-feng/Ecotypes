@@ -5,6 +5,8 @@
 
 ## Introduction
 
+For the collaborator-oriented guide to the recently added prototype ecotype, STAD mutation, and gastric publication-aligned modules, start with `README_COLLABORATOR_HANDOFF.md`.
+
 [EcoTyper](https://ecotyper.stanford.edu/) is a machine learning
 framework for large-scale identification of cell type-specific
 transcriptional states and their co-association patterns from bulk and

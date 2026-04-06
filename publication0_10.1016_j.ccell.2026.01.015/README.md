@@ -7,6 +7,8 @@ This module ports the **signature-building logic** from the authors' `nICT_GC` r
 
 It is designed to be usable without the authors' private `.rds` objects by rebuilding signatures from standard tabular inputs.
 
+Run all commands from the repository root.
+
 ## Files
 
 - `publication0_utils.R`
@@ -36,15 +38,15 @@ It is designed to be usable without the authors' private `.rds` objects by rebui
 
 ```r
 Rscript publication0_10.1016_j.ccell.2026.01.015/publication0_10.1016_j.ccell.2026.01.015_ecotype_signature_logic.R ^
-  --marker_table_path C:/path/TumorCombine_Filter_Marker.txt ^
-  --expression_path C:/path/expression.tsv ^
-  --metadata_path C:/path/metadata.tsv
+  --marker_table_path path/to/TumorCombine_Filter_Marker.txt ^
+  --expression_path path/to/expression.tsv ^
+  --metadata_path path/to/metadata.tsv
 ```
 
 ```r
 Rscript publication0_10.1016_j.ccell.2026.01.015/publication0_10.1016_j.ccell.2026.01.015_mos_signature_logic.R ^
-  --expression_path C:/path/expression.tsv ^
-  --metadata_path C:/path/sample_metadata.tsv ^
+  --expression_path path/to/expression.tsv ^
+  --metadata_path path/to/sample_metadata.tsv ^
   --group_column MOS
 ```
 
@@ -55,3 +57,16 @@ Rscript publication0_10.1016_j.ccell.2026.01.015/publication0_10.1016_j.ccell.20
 - Figure 8 derives MOS signatures as the intersection of:
   - one-vs-rest significant genes
   - genes with highest mean expression in that subtype
+
+## STAD-specific panel generation
+
+The STAD CE annotation panel generated in this repository is built by:
+
+- `publication0_10.1016_j.ccell.2026.01.015_make_ce_ecscore_and_pathway_panels.R`
+
+It expects:
+
+- a bulk expression matrix for the cohort
+- CE assignments or CE abundance derived from the STAD EcoTyper recovery
+
+This script produces the `CE x publication0 EC1-EC5` score heatmap and the pathway annotation panel used in the recent gastric analyses.
