@@ -1,0 +1,6 @@
+publication0 STAD CE panel generation complete
+Note: EC1-EC5 signatures are publication-inspired proxy signatures because the authors' exact final EC marker table was not publicly available.
+Samples scored: 412
+CE groups summarized: 10
+EC signatures used: 5
+Pathway programs used: 10

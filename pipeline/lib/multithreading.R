@@ -11,7 +11,12 @@ RunJobQueue <- function()
 	{
 		return(NULL)
 	}
-	res = mclapply(job_queue, FUN = system, mc.cores = n_threads)	
+	if(.Platform$OS.type == "windows" || n_threads <= 1)
+	{
+		res = lapply(job_queue, FUN = system)
+	}else{
+		res = mclapply(job_queue, FUN = system, mc.cores = n_threads)
+	}
 	job_queue <<- c()
 	errors = sum(unlist(res))
 	if(errors > 0)

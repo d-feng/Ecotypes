@@ -1,0 +1,6 @@
+gene	cluster	p_val_adj
+G1	EC1	0.001
+G2	EC1	0.020
+G3	EC2	0.010
+G4	EC2	0.040
+G5	EC3	0.001

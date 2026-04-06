@@ -1,0 +1,5 @@
+DOI: 10.1016/j.ccell.2026.01.015
+Ported logic: Figure 4 EC signature derivation
+Signatures recovered: 3
+Marker cutoff p_val_adj < 0.05
+Output directory: C:/Users/difen/Rcode/ecotyper/publication0_10.1016_j.ccell.2026.01.015/smoke_test/out_ec
