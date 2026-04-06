@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ecotype Workflow"
+  short_description: "Run the repo ecotype workflow."
+  default_prompt: "Use this skill to run or extend the ecotype analysis workflow in this repository."

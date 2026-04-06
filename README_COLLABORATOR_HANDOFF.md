@@ -8,6 +8,10 @@ This repository now contains three related layers of work:
    - `mutation_integration/`
    - `publication0_10.1016_j.ccell.2026.01.015/`
 
+There is also a repo-local Codex skill for this workflow:
+
+- `.codex/skills/ecotype-analysis-workflow/`
+
 This document is the fastest way for a collaborator to get oriented in a fresh Codex session.
 
 ## What is already in git
@@ -148,9 +152,10 @@ If a collaborator needs those exact files, they should either:
 
 1. Read this file
 2. Read `phase1_ecotype_pipeline/RELATIONSHIP_TO_ECOTYPER.md`
-3. Run or inspect the prototype scaffold if they need the ecotype logic first
-4. Use real EcoTyper recovery for cohort work
-5. Layer mutation and publication-style scoring afterward
+3. Use the repo-local skill at `.codex/skills/ecotype-analysis-workflow/` if working from Codex
+4. Run or inspect the prototype scaffold if they need the ecotype logic first
+5. Use real EcoTyper recovery for cohort work
+6. Layer mutation and publication-style scoring afterward
 
 ## Notes about the gastric publication module
 
